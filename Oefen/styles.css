@@ -1,0 +1,19 @@
+body {
+    font-family: lato;
+    margin: 20px;
+    padding: 20px;
+}
+button {
+    border-radius: 20px;
+    border-color: darkblue;
+    border-left-color: blue;
+    background-color: aliceblue;
+}
+span {
+    border-radius: 20px;
+    border-color: darkblue;
+    border-left-color: blue;
+    background-color: aliceblue;
+    margin-left: 10px;
+    width: auto;
+}

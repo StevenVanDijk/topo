@@ -1,10 +1,10 @@
 <html>
-
+<link rel="stylesheet" href="styles.css">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 
 <script>
-    provincies = [ "Groningen", "Friesland", "Drente" ]
+    provincies = [ "Noord-Brabant", "Friesland", "Drenthe" ]
     goedeProvincie = ""
     function maakNieuweVraag() {
         var lijst = $("#vragenlijst");
@@ -21,14 +21,14 @@
             maakNieuweVraag()
         } else {
             bericht = "Nee joh!"
+            maakNieuweVraag()
         }
 
         $("#vragenlijst > li:last-child").text(bericht);
     }
 </script>
 
-<button onclick="maakNieuweVraag()">Volgende vraag</button>
-<button onclick="kiesProvincie('Drente')">Demo</button>
+<button onclick="maakNieuweVraag()">Volgende vraag</button><span class="border" id="score">0</span>
 
 <ul id="vragenlijst">
 
@@ -56,7 +56,7 @@
     230,111,
     221,109,
     218,102,
-    222,96" onclick="alert('Drenthe')" alt="Drenthe">
+    222,96" onclick="kiesProvincie('Drenthe')" alt="Drenthe">
     <area shape="poly" coords="71,273
     73,269
     68,255
@@ -93,7 +93,7 @@
     93,263
     84,263
     84,276
-    " onclick="alert('Brabrant')" >
+    " onclick="kiesProvincie('Noord-Brabant')" >
     <area shape="poly" coords="219,20
     216,31
     225,28
@@ -113,7 +113,7 @@
     202,14
     217,10
     232,7
-    " onclick="alert('Friesland')">
+    " onclick="kiesProvincie('Friesland')">
 </map>
 
 </html>
