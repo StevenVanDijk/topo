@@ -1,12 +1,36 @@
 <html>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
 <script>
-    function maakNieuweVraag(){}
+    provincies = [ "Groningen", "Friesland", "Drente" ]
+    goedeProvincie = ""
+    function maakNieuweVraag() {
+        var lijst = $("#vragenlijst");
+        var provincie = provincies[Math.floor(Math.random()*provincies.length)]
+        goedeProvincie = provincie;
+        lijst.append("<li>Wat is de provincie: " + provincie + " </li>");
+    }
+
+    function kiesProvincie(gekozen) {
+        var bericht = ""
+        if (gekozen === goedeProvincie)
+        {
+            bericht = "Goed zo!"
+            maakNieuweVraag()
+        } else {
+            bericht = "Nee joh!"
+        }
+
+        $("#vragenlijst > li:last-child").text(bericht);
+    }
 </script>
 
 <button onclick="maakNieuweVraag()">Volgende vraag</button>
+<button onclick="kiesProvincie('Drente')">Demo</button>
 
-<ul id="vragen lijst">
+<ul id="vragenlijst">
 
 </ul>
 
